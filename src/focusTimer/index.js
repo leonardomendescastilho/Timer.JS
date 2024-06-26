@@ -1,15 +1,18 @@
-import { initialState } from './state.js';
+import { state } from './state.js';
 import * as events from './events.js';
+import * as timer from './timer.js';
 
 export function start(minutes, seconds) {
-  initialState.minutes = minutes;
-  initialState.seconds = seconds;
+  state.minutes = minutes;
+  state.seconds = seconds;
 
   events.registerControls()
+  timer.updateDisplay()
+  events.setMinutes()
 }
 
 export function reset() {
-  initialState.minutes = 0;
-  initialState.seconds = 0;
-  console.log(initialState);
+  state.minutes = 0;
+  state.seconds = 0;
+  timer.updateDisplay()
 }

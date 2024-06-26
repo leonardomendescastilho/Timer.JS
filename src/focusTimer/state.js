@@ -1,6 +1,7 @@
-export const initialState = {
+export const state = {
   minutes: 25,
   seconds: 0,
   isRunning: false,
-  isMute: true
-}
+  isMute: true,
+  countDownId: null,
+};
